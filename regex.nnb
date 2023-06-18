@@ -1,0 +1,73 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## RegEx Task "
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function capitalA(s) {\n    // let regex = /^[a-zA-Z]*[A]$/;\n    let regex = /^[a-zA-Z\\s]*[A]$/;\n\n    return regex.test(s);\n  \n}\n// Testing the capitalA function\nconsole.log(capitalA(\"Hello world A\")) // true\n\nconsole.log(capitalA(\"Hello world\")) // false\n\nconsole.log(capitalA(\"Hello world a\")) // false\n\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "false",
+                                "false",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function ioEmail(email) {\n    // let regex = /^[A-Za-z0-9._%+-]+@(?!.*\\.)[A-Za-z0-9.-]+\\.(io)$/i;\n    // let regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(io)$/i;\n    // let regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*\\.io$/i;\n    // let regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(io)$/i;\n    // let regex = /^[A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\\.(io)$/i;\n    let regex = /^[A-Za-z0-9_%+-]+@[A-Za-z0-9.-]+\\.(io)$/i;\n\n\n\n\n    return regex.test(email);\n}\n\nconsole.log(ioEmail('example@example.io'))\nconsole.log(ioEmail('ex@ample@example.io'))\nconsole.log(ioEmail('ex.ample@example.io'))\nconsole.log(ioEmail('example@example.gmail'))\n\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "true",
+                                "false",
+                                "false",
+                                "false",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function imagesSearcher(text) {\n    let regex = /\\b(\\w+\\.(?:jpg|jpeg|png))\\b/g;\n    let matches = text.match(regex);\n    if (matches) {\n      return matches;\n    } else {\n      return [];\n    }\n}\n\nlet txt = \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, cat.png sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. dog.jpg Ut enim ad minim veniam, quis nostrud exercitation ullamco cow.jpeg laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\";\nconsole.log(imagesSearcher(txt))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'cat.png', 'dog.jpg', 'cow.jpeg' ]",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
